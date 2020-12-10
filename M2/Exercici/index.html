@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- FONT AWESOME utilitzada per a les icones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <!-- Font Cuprum utilitzada per al text -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cuprum:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+    <!-- CSS propi -->
+    <link rel="stylesheet" href="css/estils.css">
+    <!-- CSS Leaflet per a la visualització del mapa -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+   integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+   crossorigin=""/>
+   <!-- JavaScript per a la visualització del mapa -->
+   <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+   integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+   crossorigin=""></script>
+</head>
+<body>
+    
+    <!-- Continugt principal de la pàgina web -->
+    <div class="container">
+
+        <!-- Capcelera de la pàgina web -->
+        <header class='logo'>
+            <img src="imatges/logo.png" alt="TechNews LOGO" class="nav-brand">
+            <h2>Incendis forestals a Catalunya</h2>
+        </header>
+
+        <!-- Menú de navegació -->
+        <nav class="nav-main">
+            <ul class="nav-menu">
+                <li>
+                    <a href="#">Incendis històrics</a>
+                </li>
+                <li>
+                    <a href="#">Incendis actuals</a>
+                </li>
+            </ul>
+            <ul class="nav-menu-right">
+                <li>
+                    <a href="#">Registre</a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fas fa-sign-in-alt"></i>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Contingut de la pàgina web: mapa, filtres, informació d'incendis i comentaris dels usuaris -->
+        <article>
+            <!-- Continugt principal: mapa i filtres -->
+            <div class="principal">
+                <div class="filtres-llistatincendis">
+                    <div class="filtres">
+                        <h3>Filtres</h3>
+                        <form action="" id="form-filtres">
+                            <div>
+                                <label for="f-any">Mes/any:</label>
+                                <input type="month" id="f-any" name="f-any" min="1987-01">
+                            </div>
+                            <div>
+                                <label for="f-comarca">Comarca:</label>
+                                <select id="f-comarca" class="f-comarca" form="form-filtres">
+                                    <option value="Totes"></option>
+                                    <option value="Alt Camp">Alt Camp</option>
+                                    <option value="Alt Empordà">Alt Empordà</option>
+                                    <option value="Alt Penedès">Alt Penedès</option>
+                                    <option value="Alt Urgell">Alt Urgell</option>
+                                    <option value="Alta Ribagorça">Alta Ribagorça</option>
+                                    <option value="Anoia">Anoia</option>
+                                    <option value="Aran">Aran</option>
+                                    <option value="Bages">Bages</option>
+                                    <option value="Baix Camp">Baix Camp</option>
+                                    <option value="Baix Ebre">Baix Ebre</option>
+                                    <option value="Baix Empordà">Baix Empordà</option>
+                                    <option value="Baix Llobregat">Baix Llobregat</option>
+                                    <option value="Baix Penedès">Baix Penedès</option>
+                                    <option value="Barcelonès">Barcelonès</option>
+                                    <option value="Berguedà">Berguedà</option>
+                                    <option value="Cerdanya">Cerdanya</option>
+                                    <option value="Conca de Barberà">Conca de Barberà</option>
+                                    <option value="Garraf">Garraf</option>
+                                    <option value="Garrigues">Garrigues</option>
+                                    <option value="Garrotxa">Garrotxa</option>
+                                    <option value="Gironès">Gironès</option>
+                                    <option value="Maresme">Maresme</option>
+                                    <option value="Moianès">Moianès</option>
+                                    <option value="Montsià">Montsià</option>
+                                    <option value="Noguera">Noguera</option>
+                                    <option value="Osona">Osona</option>
+                                    <option value="Pallars Jussà">Pallars Jussà</option>
+                                    <option value="Pallars Sobirà">Pallars Sobirà</option>
+                                    <option value="Pla d'Urgell">Pla d'Urgell</option>
+                                    <option value="Pla de l'Estany">Pla de l'Estany</option>
+                                    <option value="Priorat">Priorat</option>
+                                    <option value="Ribera d'Ebre">Ribera d'Ebre</option>
+                                    <option value="Segarra">Segarra</option>
+                                    <option value="Segrià">Segrià</option>
+                                    <option value="Selva">Selva</option>
+                                    <option value="Solsonès">Solsonès</option>
+                                    <option value="Tarragonès">Tarragonès</option>
+                                    <option value="Terra Alta">Terra Alta</option>
+                                    <option value="Urgell">Urgell</option>
+                                    <option value="Vallès Occidental">Vallès Occidental</option>
+                                    <option value="Vallès Oriental">Vallès Oriental</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="f-supmin">Supefície mínima:</label>
+                                <input type="number" id="f-supmin" class="f-supmin">
+                            </div>
+                            <div>
+                                <label for="f-supmax">Supefície màxima:</label>
+                                <input type="number" id="f-supmax" class="f-supmax">
+                            </div>
+                            <div>
+                                <a href="#" class="btn"><i class="fas fa-search"></i> Filtra</a>
+                            </div>
+                            
+                        </form>
+                    </div>
+                    <div class="incendis">
+                        <h3>Incendis</h3>
+                        <form action="" id="form-incendis">
+                            <div>
+                                <select id="f-incendis" class="f-incendis" form="form-incendis" multiple>
+                                <option value="Incendi 1">Incendi 1. Priorat</option>
+                                <option value="Incendi 2">Incendi 2. Collserola</option>
+                                <option value="Incendi 3">Incendi 3. Pirineu</option>
+                                <option value="Incendi 4">Incendi 4. Terra alta</option>
+                                <option value="Incendi 5">Incendi 5. Sant llorenç</option>
+                            </select>
+                            </div>
+                            <div>
+                                <a href="#" class="btn"><i class="fas fa-search"></i> Mostra</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div id="mapa"></div>
+            </div>
+            <!-- Continugt secundari: informació de l'incendi seleccionat i comentaris dels usuaris -->
+            <div class="secundari">
+                <div class="infoincendi">
+                    <h3>Informació incendi</h3>
+                    <p><b>Nom: </b>Serra de collserola</p>
+                    <p><b>ID: </b>12345</p>
+                    <p><b>Data: </b>25-11-209</p>
+                    <p><b>Superfície cremada: </b>237 Hes.</p>
+                    <p><b>Coordenades punt ignició: </b>42.128 / 1.527</p>
+                    <p><b>Descripció: </b>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorem dicta, eligendi deserunt, accusantium ea, ratione velit alias ab saepe atque nesciunt libero debitis omnis delectus cum mollitia! Corrupti, eveniet maxime!</p>
+                </div>
+                <div class="comentaris">
+                    <div class="titol-comentaris">
+                        <h3>Comentaris</h3>
+                        <a href="#">
+                            <i class="fas fa-pen"></i>
+                        </a>
+                    </div>
+                    
+                    <div class="comentari">
+                        <p><b>Pere </b><small><i>20/11/2020</i></small></p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil maxime facilis sequi possimus nam quaerat asperiores cumque, neque voluptas pariatur, dicta commodi nobis ipsa aut voluptate voluptates minus enim. Mollitia.</p>
+                        <img src="imatges/foc1.jpg" alt="imatge1">
+                    </div>
+                    <div class="comentari">
+                        <p><b>Marta </b><small><i>19/11/2020</i></small></p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil maxime facilis sequi possimus nam quaerat asperiores cumque, neque voluptas pariatur, dicta commodi nobis ipsa aut voluptate voluptates minus enim. Mollitia.</p>
+                        <img src="imatges/foc2.jpg" alt="imatge2">
+                    </div>
+                    <div class="comentari">
+                        <p><b>Francesc </b><small><i>18/11/2020</i></small></p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil maxime facilis sequi possimus nam quaerat asperiores cumque, neque voluptas pariatur, dicta commodi nobis ipsa aut voluptate voluptates minus enim. Mollitia.</p>
+                        <img src="imatges/foc3.jpg" alt="imatge3">
+                    </div>
+                </div>
+
+            </div>
+        </article>
+    </div>
+
+    <!-- Peu de la pàgina -->
+    <footer>
+        <div>
+            <img src="imatges/logo.png" alt="TechNews LOGO" class="nav-brand">
+        </div>
+        <div>
+            <ul class="nav-menu-footer">
+                <li>
+                    <a href="#">Incendis històrics</a>
+                </li>
+                <li>
+                    <a href="#">Incendis actuals</a>
+                </li>
+            </ul>
+        </div>
+        <div class="links">
+            <a href="#">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#">
+                <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#">
+                <i class="fab fa-linkedin"></i>
+            </a>
+        </div>
+        <p class="copyright">© 2020. Fidel Bonet. Tots els drets reservats</p>
+    </footer>
+
+    <!-- Codi JavaScript per a carregar el mapa centrat a Catalunya -->
+    <script>
+        var map = L.map('mapa').setView([41.7, 1.7], 8);
+        L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/terrain/{z}/{x}/{y}{r}.{ext}', {
+            ext: 'png',
+            attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'}).addTo(map);
+    </script>
+
+</body>
+</html>
