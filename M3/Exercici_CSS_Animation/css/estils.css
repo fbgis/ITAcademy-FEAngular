@@ -1,0 +1,130 @@
+/* Eliminació de les principals configuracions per defecte */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    color: white;
+    font-family: Lato;
+}
+
+.container {
+    display: flex;
+    overflow: hidden;
+    height: 100vh;
+    width: 100%;;
+    justify-content: space-between;
+    align-items: stretch;
+    align-content: center;
+    text-align: center;
+}
+
+.container .bloc {
+    will-change: width, left, z-index, height;
+    flex-basis: 20%;
+    justify-content: center;
+    align-items: stretch;
+    margin: 2px;
+    animation-duration: 2s;
+    animation-fill-mode: both;
+}
+
+/* Estils de cadascun dels strips */
+.strips {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    
+}
+
+
+#it {
+    animation-name: bloc1;
+    animation-duration: 1s;
+    position: relative;
+    background: #244F75;
+}
+
+#a {
+    animation-name: bloc2;
+    animation-duration: 1s;
+    position: relative;
+    background: #60BFBF;
+}
+
+#ca {
+    animation-name: bloc3;
+    animation-duration: 1s;
+    position: relative;
+    background: #8C4B7E;
+}
+
+#de {
+    animation-name: bloc4;
+    animation-duration: 1s;
+    position: relative;
+    background: #F8BB44;
+}
+
+#my {
+    animation-name: bloc5;
+    animation-duration: 1s;
+    position: relative;
+    background: #F24B4B;
+}
+
+.strips::before {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+    opacity: 0.1;
+    -webkit-transform-origin: center center;
+            transform-origin: center center;
+    -webkit-transform: skew(30deg) scaleY(1) translate(0, 0);
+            transform: skew(30deg) scaleY(1) translate(0, 0);
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+
+  /* Transformació dels estrips amb Hover */
+  .strips:hover:before {
+    -webkit-transform: skew(0deg) scale(3) translate(0, 0);
+            transform: skew(0deg) scale(3) translate(0, 0);
+  }
+
+/* Animació dels strips en carregar-se la pàgina */
+@keyframes bloc1 {
+    0% {left:-100%}
+    100% {left:0%}
+    }
+
+
+@keyframes bloc2 {
+    0% {bottom:-100%}
+    100% {bottom:0%}
+    }
+
+@keyframes bloc3 {
+    0% {top:-100%}
+    100% {top:0%}
+    }
+
+@keyframes bloc4 {
+    0% {bottom:-100%}
+    100% {bottom:0%}
+    }
+
+@keyframes bloc5 {
+    0% {right:-100%}
+    100% {right:0%}
+    }
+
+  
