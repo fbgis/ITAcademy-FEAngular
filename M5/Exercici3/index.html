@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+
+<html lang="ca">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Incendis forestals a Catalunya</title>
+    <meta name="description" content="Free Bootstrap Theme by uicookies.com">
+    <meta name="keywords" content="free website templates, free bootstrap themes, free template, free bootstrap, free website template">
+    
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles-merged.css">
+    <link rel="stylesheet" href="css/style.min.css">
+    <link rel="stylesheet" href="css/custom.css">
+
+    <!--[if lt IE 9]>
+      <script src="js/vendor/html5shiv.min.js"></script>
+      <script src="js/vendor/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- CSS Leaflet per a la visualització del mapa -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+   integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+   crossorigin=""/>
+   <!-- JavaScript per a la visualització del mapa -->
+   <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+   integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+   crossorigin=""></script>
+
+  </head>
+  <body>
+
+  <!-- START: header -->
+  
+  <div class="probootstrap-loader"></div>
+
+  <header role="banner" class="probootstrap-header">
+    <div class="container">
+        <a href="index.html" class="probootstrap-logo">Incendis forestals a Catalunya</a>
+        
+        <a href="#" class="probootstrap-burger-menu visible-xs" ><i>Menú</i></a>
+        <div class="mobile-menu-overlay"></div>
+
+        <nav role="navigation" class="probootstrap-nav hidden-xs">
+          <ul class="probootstrap-main-nav">
+            <li class="active"><a href="index.html">Inici</a></li>
+            <li><a href="projects.html">Incendis històrics</a></li>
+            <li><a href="services.html">Incendis actuals</a></li>
+            <li><a href="about.html">Registre</a></li>
+            <li><a href="contact.html">Inici de sessió</a></li>
+          </ul>
+          <ul class="probootstrap-right-nav hidden-xs">
+            <li><a href="#"><i class="icon-twitter"></i></a></li>
+            <li><a href="#"><i class="icon-facebook2"></i></a></li>
+            <li><a href="#"><i class="icon-instagram2"></i></a></li>
+          </ul>
+          <div class="extra-text visible-xs"> 
+            <a href="#" class="probootstrap-burger-menu"><i>Menú</i></a>
+            <h5>Autor</h5>
+            <p>Fidel Bonet</p>
+            <h5>Connecta amb nosaltres</h5>
+            <ul class="social-buttons">
+              <li><a href="#"><i class="icon-twitter"></i></a></li>
+              <li><a href="#"><i class="icon-facebook2"></i></a></li>
+              <li><a href="#"><i class="icon-instagram2"></i></a></li>
+            </ul>
+          </div>
+        </nav>
+    </div>
+  </header>
+  <!-- END: header -->
+  <section class="probootstrap-slider flexslider">
+    <ul class="slides">
+      <li style="background-image: url(img/foc1.jpg);">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12 text-center">
+              <div class="slides-text probootstrap-animate">
+                <h2>Tots els incendis de Catalunya dels de l'any 1987</h2>
+                <p><a href="https://uicookies.com/" target="_blank" class="btn btn-primary">Mostra</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li style="background-image: url(img/foc2.jpg);">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12 text-center">
+              <div class="slides-text probootstrap-animate">
+                <h2>Incendis en curs</h2>
+                <p><a href="https://uicookies.com/" target="_blank" class="btn btn-primary">Mostra</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li style="background-image: url(img/foc3.jpg);">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12 text-center">
+              <div class="slides-text probootstrap-animate">
+                <h2>Explica'ns la teva experiència</h2>
+                <p><a href="https://uicookies.com/" target="_blank" class="btn btn-primary">Motra</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </section>
+  <!-- END: slider  -->
+
+  <!-- <section class="probootstrap-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="service left-icon probootstrap-animate">
+
+            <div class="icon">
+              <i class="icon-laptop3"></i>
+            </div>
+            <div class="text">
+              <h3 class="heading">Business Strategy</h3>
+              <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p>
+              <p><a href="single-page.html">Learn more</a></p>
+            </div>
+
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="service left-icon probootstrap-animate">
+            <div class="icon">
+              <i class="icon-presentation"></i>
+            </div>
+            <div class="text">
+              <h3 class="heading">Business Marketing</h3>
+              <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p>
+              <p><a href="single-page.html">Learn more</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="service left-icon probootstrap-animate">
+            <div class="icon">
+              <i class="icon-wallet2"></i>
+            </div>
+            <div class="text">
+              <h3 class="heading">Business Profit</h3>
+              <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p>
+              <p><a href="single-page.html">Learn more</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section> -->
+  <!-- END section -->
+
+  <div class="probootstrap-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 probootstrap-animate" data-animate-effect="fadeInLeft">
+
+          <div class="panel-group probootstrap-panel" id="accordion" role="tablist" aria-multiselectable="true">
+            <div class="panel panel-default">
+              <div class="panel-heading" role="tab" id="headingOne">
+                <h3 class="panel-title">
+                  <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    Filtres
+                  </a>
+                </h3>
+              </div>
+              <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                <div class="panel-body">
+                  <form action="#" method="post" class="probootstrap-form mb60">
+                    <div class="form-group">
+                      <label for="f-any">Mes-any</label>
+                      <input type="month" class="form-control" name="f-any" min="1987-01">
+                    </div>
+                    <div class="form-group">
+                      <label for="f-comarca">Comarca</label>
+                      <select id="f-comarca" class="form-control" form="form-filtres">
+                          <option value="Totes"></option>
+                          <option value="Alt Camp">Alt Camp</option>
+                          <option value="Alt Empordà">Alt Empordà</option>
+                          <option value="Alt Penedès">Alt Penedès</option>
+                          <option value="Alt Urgell">Alt Urgell</option>
+                          <option value="Alta Ribagorça">Alta Ribagorça</option>
+                          <option value="Anoia">Anoia</option>
+                          <option value="Aran">Aran</option>
+                          <option value="Bages">Bages</option>
+                          <option value="Baix Camp">Baix Camp</option>
+                          <option value="Baix Ebre">Baix Ebre</option>
+                          <option value="Baix Empordà">Baix Empordà</option>
+                          <option value="Baix Llobregat">Baix Llobregat</option>
+                          <option value="Baix Penedès">Baix Penedès</option>
+                          <option value="Barcelonès">Barcelonès</option>
+                          <option value="Berguedà">Berguedà</option>
+                          <option value="Cerdanya">Cerdanya</option>
+                          <option value="Conca de Barberà">Conca de Barberà</option>
+                          <option value="Garraf">Garraf</option>
+                          <option value="Garrigues">Garrigues</option>
+                          <option value="Garrotxa">Garrotxa</option>
+                          <option value="Gironès">Gironès</option>
+                          <option value="Maresme">Maresme</option>
+                          <option value="Moianès">Moianès</option>
+                          <option value="Montsià">Montsià</option>
+                          <option value="Noguera">Noguera</option>
+                          <option value="Osona">Osona</option>
+                          <option value="Pallars Jussà">Pallars Jussà</option>
+                          <option value="Pallars Sobirà">Pallars Sobirà</option>
+                          <option value="Pla d'Urgell">Pla d'Urgell</option>
+                          <option value="Pla de l'Estany">Pla de l'Estany</option>
+                          <option value="Priorat">Priorat</option>
+                          <option value="Ribera d'Ebre">Ribera d'Ebre</option>
+                          <option value="Segarra">Segarra</option>
+                          <option value="Segrià">Segrià</option>
+                          <option value="Selva">Selva</option>
+                          <option value="Solsonès">Solsonès</option>
+                          <option value="Tarragonès">Tarragonès</option>
+                          <option value="Terra Alta">Terra Alta</option>
+                          <option value="Urgell">Urgell</option>
+                          <option value="Vallès Occidental">Vallès Occidental</option>
+                          <option value="Vallès Oriental">Vallès Oriental</option>
+                      </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="f-supmin">Supefície mínima</label>
+                    <input type="range" id="f-supmin" class="f-supmin custom-range" min="0" max="10000" step="1">
+                </div>
+                <div class="form-group">
+                    <label for="f-supmax">Supefície màxima</label>
+                    <input type="range" id="f-supmax" class="f-supmax custom-range" min="1" max="10000" step="1">
+                </div>
+                    <div class="form-group">
+                      <input type="submit" class="btn btn-primary" id="submit" name="submit" value="Filtra">
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+            <div class="panel panel-default">
+              <div class="panel-heading" role="tab" id="headingTwo">
+                <h3 class="panel-title">
+                  <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    Incendis
+                  </a>
+                </h3>
+              </div>
+              <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                <div class="panel-body">
+                  <form action="#" method="post" class="probootstrap-form mb60"></form>
+                    <div class="form-group">
+                      <select id="f-incendis" class="form-control" form="form-incendis" multiple>
+                        <option value="Incendi 1">Incendi 1. Priorat</option>
+                        <option value="Incendi 2">Incendi 2. Collserola</option>
+                        <option value="Incendi 3">Incendi 3. Pirineu</option>
+                        <option value="Incendi 4">Incendi 4. Terra alta</option>
+                        <option value="Incendi 5">Incendi 5. Sant llorenç</option>
+                      </select>
+                    <div class="form-group">
+                      <input type="submit" class="btn btn-primary" id="submit" name="submit" value="Mostra">
+                    </div>
+                </form>
+                </div>
+                  
+                </div>
+              </div>
+            </div>
+            <!-- <div class="panel panel-default">
+              <div class="panel-heading" role="tab" id="headingThree">
+                <h3 class="panel-title">
+                  <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    Business Profit
+                  </a>
+                </h3>
+              </div>
+              <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                <div class="panel-body">
+                  <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.</p>
+                </div>
+              </div>
+            </div> -->
+          </div>
+          <!-- END panel-group -->
+        </div>
+        <div class="col-md-8 probootstrap-animate" data-animate-effect="fadeInRight">
+
+
+            <div id="mapa">
+              
+            </div>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- END section -->
+  
+  
+  <div class="container">
+    <div class="probootstrap-cta probootstrap-animate">
+      <h2 class="mb20">Informació de l'incendi</h2>
+      <p><h4>Nom: </h4>Serra de collserola</p>
+      <p><h4>ID: </h4>12345</p>
+      <p><h4>Data: </h4>25-11-209</p>
+      <p><h4>Superfície cremada: </h4>237 Hes.</p>
+      <p><h4>Coordenades punt ignició: </h4>42.128 / 1.527</p>
+      <p><h4>Descripció: </h4>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorem dicta, eligendi deserunt, accusantium ea, ratione velit alias ab saepe atque nesciunt libero debitis omnis delectus cum mollitia! Corrupti, eveniet maxime!</p>    </div>
+  </div>
+
+  <!-- END section cta -->
+
+  <section class="probootstrap-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 section-heading probootstrap-animate">
+          <h2>Comentaris</h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4 probootstrap-animate">
+          <div class="probootstrap-card">
+            <div class="probootstrap-card-media">
+              <a href="single-page.html"><img src="img/foc1.jpg" class="img-responsive img-border" alt="Free HTML5 Template by uicookies.com"></a>
+            </div>
+            <div class="probootstrap-card-text">
+              <h2 class="probootstrap-card-heading mb0">Pere</h2>
+              <p class="category">20/11/2020</p>
+              <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+              <p><a href="single-page.html">View details</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 probootstrap-animate">
+          <div class="probootstrap-card">
+            <div class="probootstrap-card-media">
+              <a href="single-page.html"><img src="img/foc2.jpg" class="img-responsive img-border" alt="Free HTML5 Template by uicookies.com"></a>
+            </div>
+            <div class="probootstrap-card-text">
+              <h2 class="probootstrap-card-heading mb0">Marta</h2>
+              <p class="category">19-11-2020</p>
+              <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+              <p><a href="single-page.html">View details</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 probootstrap-animate">
+          <div class="probootstrap-card">
+            <div class="probootstrap-card-media">
+              <a href="single-page.html"><img src="img/foc3.jpg" class="img-responsive img-border" alt="Free HTML5 Template by uicookies.com"></a>
+            </div>
+            <div class="probootstrap-card-text">
+              <h2 class="probootstrap-card-heading mb0">Francesc</h2>
+              <p class="category">18/11/2020g</p>
+              <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+              <p><a href="single-page.html">View details</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- END section -->
+  
+
+  <footer class="probootstrap-footer probootstrap-bg">
+    <div class="container">
+      <div class="row mb60">
+        <div class="col-md-3">
+          <div class="probootstrap-footer-widget">
+            <h4 class="heading">Sobre Incendis Forestals de Catalunya</h4>
+            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p>
+            <p><a href="#">Llegeix més...</a></p>
+          </div> 
+        </div>
+        <div class="col-md-3">
+          <div class="probootstrap-footer-widget probootstrap-link-wrap">
+            <h4 class="heading">Enllaços ràpids</h4>
+            <ul class="stack-link">
+              <li><a href="#">Inici</a></li>
+              <li><a href="#">Incendis històrics</a></li>
+              <li><a href="#">Incendis actuals</a></li>
+              <li><a href="#">Registre</a></li>
+              <li><a href="#">Inici de sessió</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="probootstrap-footer-widget">
+            <h4 class="heading">Més enllaços</h4>
+            <ul class="stack-link">
+              <li><a href="#">El projecte</a></li>
+              <li><a href="#">Privacitat</a></li>
+              <li><a href="#">Termes</a></li>
+              <li><a href="#">Sobre l'autor</a></li>
+              <li><a href="#">Ajudan's a millorar</a></li>
+            </ul>
+          </div> 
+        </div>
+        <div class="col-md-3">
+          <div class="probootstrap-footer-widget probootstrap-link-wrap">
+            <h4 class="heading">Subscriu-te</h4>
+            <p>Far far away behind the word mountains far from.</p>
+            <form action="#">
+              <div class="form-field">
+                <input type="text" class="form-control" placeholder="Introdueix el correu">
+                <button class="btn btn-subscribe">Enviar</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="row copyright">
+        <div class="col-md-6">
+          <div class="probootstrap-footer-widget">
+            <p>&copy; 2017 <a href="https://uicookies.com/">uiCookies:Black</a>. Designed by <a href="https://uicookies.com/">uicookies.com</a> <br> Demo Photos from <a href="https://unsplash.com/">Unsplash</a></p>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="probootstrap-footer-widget right">
+            <ul class="probootstrap-social">
+              <li><a href="#"><i class="icon-twitter"></i></a></li>
+              <li><a href="#"><i class="icon-facebook"></i></a></li>
+              <li><a href="#"><i class="icon-instagram2"></i></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+
+  <div class="gototop js-top">
+    <a href="#" class="js-gotop"><i class="icon-chevron-thin-up"></i></a>
+  </div>
+
+  <!-- Codi JavaScript per a carregar el mapa centrat a Catalunya -->
+  <script>
+    var map = L.map('mapa').setView([41.7, 1.7], 8);
+    L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/terrain/{z}/{x}/{y}{r}.{ext}', {
+        ext: 'png',
+        attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'}).addTo(map);
+  </script>
+
+  <script src="js/scripts.min.js"></script>
+  <script src="js/main.min.js"></script>
+  <script src="js/custom.js"></script>
+
+  
+  </body>
+</html>

@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Incendis forestals a Catalunya</title>
+    <!-- FONT AWESOME utilitzada per a les icones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <!-- Font Cuprum utilitzada per al text -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cuprum:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <!-- Bootstrap CSS descarregat-->
+    <!-- <link rel="stylesheet" type="text/css" href="css/bootstrap.css"> -->
+    <!-- CSS propi -->
+    <link rel="stylesheet" href="css/estils.css">
+    <!-- CSS Leaflet per a la visualització del mapa -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+   integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+   crossorigin=""/>
+   <!-- JavaScript per a la visualització del mapa -->
+   <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+   integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+   crossorigin=""></script>
+</head>
+<body class="text-light">
+    
+    <!-- Continugt principal de la pàgina web -->
+    <div class="container-fluid">
+
+        <!-- Capcelera de la pàgina web -->
+        <div class="row">
+
+            <header class='col-12 d-none d-md-block text-center'>
+                <img src="imatges/logo.png" alt="TechNews LOGO" class="nav-brand">
+                <h2>Incendis forestals a Catalunya</h2>
+            </header>
+    
+            <!-- Menú de navegació -->
+
+            <nav class="navbar navbar-expand-md navbar-dark bg-dark col-12 justify-content-between">
+                <a class="navbar-brand d-blok d-md-none" href="#">
+                    <img src="imatges/logo.png" alt="">
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+              
+                <div class="collapse navbar-collapse"  id="navbarTogglerDemo02">
+                  <ul class="navbar-nav mr-auto mt-1 mt-lg-0">
+                    <li class="nav-item">
+                      <a class="nav-link text-light" href="#">Incendis històrics</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link text-light" href="#">Incendis actuals</a>
+                    </li>
+                  </ul>
+                </div>  
+                <div class="row">
+                    <ul class="navbar-nav my-2 my-lg-0 list-group-horizontal">
+                        <li class="nav-item">
+                            <a class="nav-link text-light mr-2" data-toggle="modal" data-target="#registreModal" href="#">Registre</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-light mr-2" data-toggle="modal" data-target="#loginModal" href="#">
+                                <i class="fas fa-sign-in-alt"></i>
+                            </a>
+                        </li>
+                    </ul>
+                    
+                </div>
+                
+                <!-- Modal registre-->
+                <div class="modal fade" id="registreModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                        <h5 class="modal-title text-secondary" id="exampleModalLabel">Registre</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        </div>
+                        <div class="modal-body">
+                            <form action="">
+                                <div class="form-group row">
+                                    <label for="inputNom" class="col-sm-2 col-form-label text-dark">Nom</label>
+                                    <div class="col-sm-10">
+                                      <input type="text" class="form-control" id="inputNom">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="inputCognom" class="col-sm-2 col-form-label text-dark">Cognom</label>
+                                    <div class="col-sm-10">
+                                      <input type="text" class="form-control" id="inputCognom">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="inputEmail" class="col-sm-2 col-form-label text-dark">Correu electrònic</label>
+                                    <div class="col-sm-10">
+                                      <input type="email" class="form-control" id="inputEmail">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="inputContrasenya" class="col-sm-2 col-form-label text-dark">Contrasenya</label>
+                                    <div class="col-sm-10">
+                                      <input type="password" class="form-control" id="inputContrasenya">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Tanca</button>
+                        <button type="button" class="btn btn-primary">Registra</button>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+
+                <!-- Modal login-->
+                <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                        <h5 class="modal-title text-secondary" id="exampleModalLabel">Login</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        </div>
+                        <div class="modal-body">
+                            <form action="">
+                                <div class="form-group row">
+                                    <label for="inputEmail" class="col-sm-2 col-form-label text-dark">Correu electrònic</label>
+                                    <div class="col-sm-10">
+                                      <input type="email" class="form-control" id="inputEmail">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="inputContrasenya" class="col-sm-2 col-form-label text-dark">Contrasenya</label>
+                                    <div class="col-sm-10">
+                                      <input type="password" class="form-control" id="inputContrasenya">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Tanca</button>
+                        <button type="button" class="btn btn-primary">Entra</button>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                
+                
+              </nav>
+
+        </div>
+
+
+        <!-- Contingut de la pàgina web: mapa, filtres, informació d'incendis i comentaris dels usuaris -->
+        <article>
+            <!-- Carrousel amb 4 imatges -->
+            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                  <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                  <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                  <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                  <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+                </ol>
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img src="imatges/foc1h.jpg" class="d-block w-100" alt="Imatge1">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="imatges/foc2h.jpg" class="d-block w-100" alt="Imatge2">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="imatges/foc3h.jpg" class="d-block w-100" alt="Imatge3">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="imatges/foc4h.jpg" class="d-block w-100" alt="Imatge4">
+                  </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Next</span>
+                </a>
+              </div>
+
+            <!-- Continugt principal: mapa i filtres -->
+            <div class="row mt-2">
+                <div class="col-12 col-sm-5 col-md-4 col-lg-3">
+                    <div class="row">
+                        <div class="col-6 col-sm-12 p-3">
+                            <h3>Filtres</h3>
+                            <form action="" id="form-filtres">
+                                <div class="form-group">
+                                    <label for="f-any">Mes/any</label>
+                                    <input type="month" id="f-any" name="f-any" min="1987-01">
+                                </div>
+                                <div class="form-group">
+                                    <label for="f-comarca">Comarca</label>
+                                    <select id="f-comarca" class="form-control" form="form-filtres">
+                                        <option value="Totes"></option>
+                                        <option value="Alt Camp">Alt Camp</option>
+                                        <option value="Alt Empordà">Alt Empordà</option>
+                                        <option value="Alt Penedès">Alt Penedès</option>
+                                        <option value="Alt Urgell">Alt Urgell</option>
+                                        <option value="Alta Ribagorça">Alta Ribagorça</option>
+                                        <option value="Anoia">Anoia</option>
+                                        <option value="Aran">Aran</option>
+                                        <option value="Bages">Bages</option>
+                                        <option value="Baix Camp">Baix Camp</option>
+                                        <option value="Baix Ebre">Baix Ebre</option>
+                                        <option value="Baix Empordà">Baix Empordà</option>
+                                        <option value="Baix Llobregat">Baix Llobregat</option>
+                                        <option value="Baix Penedès">Baix Penedès</option>
+                                        <option value="Barcelonès">Barcelonès</option>
+                                        <option value="Berguedà">Berguedà</option>
+                                        <option value="Cerdanya">Cerdanya</option>
+                                        <option value="Conca de Barberà">Conca de Barberà</option>
+                                        <option value="Garraf">Garraf</option>
+                                        <option value="Garrigues">Garrigues</option>
+                                        <option value="Garrotxa">Garrotxa</option>
+                                        <option value="Gironès">Gironès</option>
+                                        <option value="Maresme">Maresme</option>
+                                        <option value="Moianès">Moianès</option>
+                                        <option value="Montsià">Montsià</option>
+                                        <option value="Noguera">Noguera</option>
+                                        <option value="Osona">Osona</option>
+                                        <option value="Pallars Jussà">Pallars Jussà</option>
+                                        <option value="Pallars Sobirà">Pallars Sobirà</option>
+                                        <option value="Pla d'Urgell">Pla d'Urgell</option>
+                                        <option value="Pla de l'Estany">Pla de l'Estany</option>
+                                        <option value="Priorat">Priorat</option>
+                                        <option value="Ribera d'Ebre">Ribera d'Ebre</option>
+                                        <option value="Segarra">Segarra</option>
+                                        <option value="Segrià">Segrià</option>
+                                        <option value="Selva">Selva</option>
+                                        <option value="Solsonès">Solsonès</option>
+                                        <option value="Tarragonès">Tarragonès</option>
+                                        <option value="Terra Alta">Terra Alta</option>
+                                        <option value="Urgell">Urgell</option>
+                                        <option value="Vallès Occidental">Vallès Occidental</option>
+                                        <option value="Vallès Oriental">Vallès Oriental</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="f-supmin">Supefície mínima</label>
+                                    <input type="range" id="f-supmin" class="f-supmin custom-range" min="0" max="10000" step="1">
+                                </div>
+                                <div class="form-group">
+                                    <label for="f-supmax">Supefície màxima</label>
+                                    <input type="range" id="f-supmax" class="f-supmax custom-range" min="1" max="10000" step="1">
+                                </div>
+                                <div class="d-flex justify-content-center">
+                                    <a href="#" class="btn"><i class="fas fa-search"></i> Filtra</a>
+                                </div>
+                                
+                            </form>
+                        </div>
+                        <div class="col-6 col-sm-12 p-3">
+                            <h3>Incendis</h3>
+                            <form action="" id="form-incendis">
+                                <div class="form-group">
+                                    <select id="f-incendis" class="form-control" form="form-incendis" multiple>
+                                    <option value="Incendi 1">Incendi 1. Priorat</option>
+                                    <option value="Incendi 2">Incendi 2. Collserola</option>
+                                    <option value="Incendi 3">Incendi 3. Pirineu</option>
+                                    <option value="Incendi 4">Incendi 4. Terra alta</option>
+                                    <option value="Incendi 5">Incendi 5. Sant llorenç</option>
+                                </select>
+                                </div>
+                                <div class="d-flex justify-content-center">
+                                    <a href="#" class="btn"><i class="fas fa-search"></i> Mostra</a>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-7 col-md-8 col-lg-9"  id="mapa"></div>
+            </div>
+            <!-- Continugt secundari: informació de l'incendi seleccionat i comentaris dels usuaris -->
+            <div class="row secundari">
+                <div class="col-12 col-md-5 col-lg-4">
+                    <h3>Informació incendi</h3>
+                    <p><b>Nom: </b>Serra de collserola</p>
+                    <p><b>ID: </b>12345</p>
+                    <p><b>Data: </b>25-11-209</p>
+                    <p><b>Superfície cremada: </b>237 Hes.</p>
+                    <p><b>Coordenades punt ignició: </b>42.128 / 1.527</p>
+                    <p><b>Descripció: </b>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorem dicta, eligendi deserunt, accusantium ea, ratione velit alias ab saepe atque nesciunt libero debitis omnis delectus cum mollitia! Corrupti, eveniet maxime!</p>
+                </div>
+                <div class="col-12 col-md-7 col-lg-8">
+                    <div class="titol-comentaris">
+                        <h3>Comentaris</h3>
+                        <a href="#">
+                            <i class="fas fa-pen"></i>
+                        </a>
+                    </div>
+                    <div class="">
+                        <div class="card bg-dark text-white mb-2">
+                            <div class="card-body">
+                                <h6 class="card-title"><b>Pere </b><small><i>20/11/2020</i></small></h6>
+                                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil maxime facilis sequi possimus nam quaerat asperiores cumque, neque voluptas pariatur, dicta commodi nobis ipsa aut voluptate voluptates minus enim. Mollitia.</p>
+                            </div>
+                            <img src="imatges/foc1.jpg" alt="imatge1" class="card-img-bottom">  
+                        </div>
+                        <div class="card bg-dark text-white mb-2">
+                            <div class="card-body">
+                                <h6 class="card-title"><b>Marta </b><small><i>19/11/2020</i></small></h6>
+                                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil maxime facilis sequi possimus nam quaerat asperiores cumque, neque voluptas pariatur, dicta commodi nobis ipsa aut voluptate voluptates minus enim. Mollitia.</p>
+                            </div>
+                            <img src="imatges/foc2.jpg" alt="imatge2" class="card-img-bottom">  
+                        </div>
+                        <div class="card bg-dark text-white mb-2">
+                            <div class="card-body">
+                                <h6 class="card-title"><b>Francesc </b><small><i>18/11/2020</i></small></h6>
+                                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil maxime facilis sequi possimus nam quaerat asperiores cumque, neque voluptas pariatur, dicta commodi nobis ipsa aut voluptate voluptates minus enim. Mollitia.</p>
+                            </div>
+                            <img src="imatges/foc3.jpg" alt="imatge3" class="card-img-bottom">  
+                        </div>
+                    </div>
+                    
+                </div>
+
+            </div>
+        </article>
+    </div>
+
+    <!-- Peu de la pàgina -->
+    <footer class="col">
+        <div>
+            <img src="imatges/logo.png" alt="TechNews LOGO" class="nav-brand">
+        </div>
+        <div> 
+            <ul class="nav-menu-footer">
+                <li>
+                    <a href="#">Incendis històrics</a>
+                </li>
+                <li>
+                    <a href="#">Incendis actuals</a>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <a href="#">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#">
+                <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#">
+                <i class="fab fa-linkedin"></i>
+            </a>
+        </div>
+        <p class="copyright">© 2020. Fidel Bonet. Tots els drets reservats</p>
+    </footer>
+
+    <!-- Codi JavaScript per a carregar el mapa centrat a Catalunya -->
+    <script>
+        var map = L.map('mapa').setView([41.7, 1.7], 8);
+        L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/terrain/{z}/{x}/{y}{r}.{ext}', {
+            ext: 'png',
+            attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'}).addTo(map);
+    </script>
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+</body>
+</html>
