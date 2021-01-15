@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Enllaç a Bootstrap4 CSS-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+</head>
+
+<body>
+
+    <div class="col mx-auto mt-5 bg-light" style="width: 300px; height: 310px;">
+        <div class="row mb-3">
+            <div class="col-12 bg-dark text-white text-right p-1">
+                <h3 id="resultat">0</h3>
+            </div>
+        </div>
+        <div class="row mb-2">
+            <div class="col-6">
+                <button type="button" class="btn btn-primary btn-block" id="btn_ac">AC</button>
+            </div>
+            <div class="col-3">
+                <button type="button" class="btn btn-primary btn-block" id="btn_signe">+/-</button>
+            </div>
+            <div class="col-3">
+                <button type="button" class="btn btn-warning btn-block" id="btn_divisio">÷</button>
+            </div>
+        </div>
+        <div class="row mb-2">
+            <div class="col-3">
+                <button type="button" class="btn btn-secondary btn-block" id="btn_7">7</button>
+            </div>
+            <div class="col-3">
+                <button type="button" class="btn btn-secondary btn-block" id="btn_8">8</button>
+            </div>
+            <div class="col-3">
+                <button type="button" class="btn btn-secondary btn-block" id="btn_9">9</button>
+            </div>
+            <div class="col-3">
+                <button type="button" class="btn btn-warning btn-block" id="btn_multiplicacio">x</button>
+            </div>
+        </div>
+        <div class="row mb-2">
+            <div class="col-3">
+                <button type="button" class="btn btn-secondary btn-block" id="btn_4">4</button>
+            </div>
+            <div class="col-3">
+                <button type="button" class="btn btn-secondary btn-block" id="btn_5">5</button>
+            </div>
+            <div class="col-3">
+                <button type="button" class="btn btn-secondary btn-block" id="btn_6">6</button>
+            </div>
+            <div class="col-3">
+                <button type="button" class="btn btn-warning btn-block" id="btn_resta">-</button>
+            </div>
+        </div>
+        <div class="row mb-2">
+            <div class="col-3">
+                <button type="button" class="btn btn-secondary btn-block" id="btn_1">1</button>
+            </div>
+            <div class="col-3">
+                <button type="button" class="btn btn-secondary btn-block" id="btn_2">2</button>
+            </div>
+            <div class="col-3">
+                <button type="button" class="btn btn-secondary btn-block" id="btn_3">3</button>
+            </div>
+            <div class="col-3">
+                <button type="button" class="btn btn-warning btn-block" id="btn_suma">+</button>
+            </div>
+        </div>
+        <div class="row mb-2">
+            <div class="col-9">
+                <button type="button" class="btn btn-secondary btn-block" id="btn_0">0</button>
+            </div>
+            <div class="col-3">
+                <button type="button" class="btn btn-warning btn-block" id="btn_igual">=</button>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script>
+
+        //Exercici 1
+        console.log('Hola món');
+
+        //Exercici 2
+        alert('El meu nom és Fidel');
+
+        //Exercici 3
+        let nom = "Fidel";
+        let cognom = "Bonet";
+        console.log(nom + ' ' + cognom);
+
+        //Exercici 4
+        let primerNumero = 34;
+        let segonNumero = 56;
+        let suma = primerNumero + segonNumero;
+        console.log('La suma entre ' + primerNumero + ' i ' + segonNumero + ' és ' + suma);
+
+        //Exercici 5
+        let nota_examen = 4.6
+        if (nota_examen >= 5) {
+            alert("Enhorabona! Has aprovat l'examen amb un " + nota_examen);
+        } else {
+            alert("Ohh has suspès l'examen amb un " + nota_examen);
+        }
+
+        //Exercici 6
+        let textInicial = 'Tinc un cotxe de color blau'
+        let textFinal = textInicial.replace('blau', 'verd');
+        console.log(textFinal)
+        textFinal = textInicial.replaceAll('o', 'u');
+        console.log(textFinal)
+
+        //Exercici 7
+        let llistat = ['taula', 'cadira', 'ordinador', 'libreta'];
+        for (let i = 0; i < llistat.length; i++) {
+            console.log("L'objecte " + llistat[i] + ' està a la posició ' + i);
+        }
+
+        //Exercici 8
+        function calculadora(operador, valor1, valor2) {
+            switch (operador) {
+                case 'suma':
+                    resultat = valor1 + valor2;
+                    break;
+                case 'resta':
+                    resultat = valor1 - valor2;
+                    break;
+                case 'multiplicacio':
+                    resultat = valor1 * valor2;
+                    break;
+            }
+            console.log('El resultat de la ' + operador + ' de ' + valor1 + ' i ' + valor2 + ' és: ' + resultat);
+            return resultat;
+        }
+        var resultat1 = calculadora('suma', 5, 3);
+        var resultat2 = calculadora('resta', 5, 3);
+        var resultat3 = calculadora('multiplicacio', 5, 3);
+
+        //Nivell 2
+        function calculadoraNova(operador, valor1, valor2) {
+            let error = '';
+            switch (operador) {
+                case 'suma':
+                    resultat = valor1 + valor2;
+                    break;
+                case 'resta':
+                    resultat = valor1 - valor2;
+                    break;
+                case 'multiplicacio':
+                    resultat = valor1 * valor2;
+                    break;
+                case 'divisio':
+                    if (valor2 === 0) {
+                        error = 'No és possible dividir per 0';
+                        break;
+                    }
+                    resultat = valor1 / valor2;
+                    break;
+            }
+            if (error === '') {
+                console.log('El resultat de la ' + operador + ' de ' + valor1 + ' i ' + valor2 + ' és: ' + resultat);
+                return resultat;
+            } else {
+                console.log(error);
+                return error;
+            }
+        }
+        var resultat1 = calculadoraNova('suma', 5, 3);
+        var resultat2 = calculadoraNova('resta', 5, 3);
+        var resultat3 = calculadoraNova('multiplicacio', 5, 3);
+        var resultat3 = calculadoraNova('divisio', 5, 3);
+        var resultat3 = calculadoraNova('divisio', 5, 0);
+
+        //Nivell 3
+
+        //Listenings dels botons
+        document.getElementById("btn_ac").addEventListener("click", () => {clic('ac');});
+        document.getElementById("btn_signe").addEventListener("click", () => {clic('signe');});
+        document.getElementById("btn_divisio").addEventListener("click", () => {clic('divisio');});
+        document.getElementById("btn_multiplicacio").addEventListener("click", () => {clic('multiplicacio');});
+        document.getElementById("btn_resta").addEventListener("click", () => {clic('resta');});
+        document.getElementById("btn_suma").addEventListener("click", () => {clic('suma');});
+        document.getElementById("btn_igual").addEventListener("click", () => {clic('igual');});
+        document.getElementById("btn_0").addEventListener("click", () => {clic('0');});
+        document.getElementById("btn_1").addEventListener("click", () => {clic('1');});
+        document.getElementById("btn_2").addEventListener("click", () => {clic('2');});
+        document.getElementById("btn_3").addEventListener("click", () => {clic('3');});
+        document.getElementById("btn_4").addEventListener("click", () => {clic('4');});
+        document.getElementById("btn_5").addEventListener("click", () => {clic('5');});
+        document.getElementById("btn_6").addEventListener("click", () => {clic('6');});
+        document.getElementById("btn_7").addEventListener("click", () => {clic('7');});
+        document.getElementById("btn_8").addEventListener("click", () => {clic('8');});
+        document.getElementById("btn_9").addEventListener("click", () => {clic('9');});
+
+
+        //variable que contindrà el primer operand
+        var num1=0;
+
+        //variable que contidnrà el segon operand
+        var num2=0;
+
+        //variable que contindrà l'operació
+        var operacio='';
+
+        //funcions dels botons
+
+        //funció clic. Accions dels diversos btons
+        function clic(valor){
+            let valorPantallaActual = document.getElementById('resultat').innerText;
+            let pantallaActual = document.getElementById('resultat');
+            switch(valor){
+                //Si s'ha premut un dels números el mostra per pantalla al darrera de l'actual o bé substitueix el zero pel número premut
+                case '0':
+                case '1':
+                case '2':
+                case '3':
+                case '4':
+                case '5':
+                case '6':
+                case '7':
+                case '8':
+                case '9':
+                    if(valorPantallaActual=='0'||operacio!=0){
+                        pantallaActual.innerText=valor;
+                    }else{
+                        pantallaActual.innerText=valorPantallaActual+valor;
+                    }
+                    break;
+                case 'ac'://Elimina el número de la pantalla i els operands guardats
+                    pantallaActual.innerText='0';
+                    num1='';
+                    num2='';
+                    break;
+                case 'signe'://Canvio el signe del número que hi ha a la pantalla excepte si aquest és 0
+                    if(valorPantallaActual=='0'){
+                        break;
+                    }
+                    if(valorPantallaActual.charAt(0)=='-'){
+                        pantallaActual.innerText=valorPantallaActual.slice(1);
+                    }else{
+                        pantallaActual.innerText='-'+valorPantallaActual;
+                    }
+                    break;
+                case 'suma'://Guardo el número actual coma a primer operand i l'operació suma
+                    num1=valorPantallaActual;
+                    operacio='suma';
+                    break;
+                case 'resta'://Guardo el número actual coma a primer operand i l'operació resta
+                    num1=valorPantallaActual;
+                    operacio='resta';
+                    break;
+                case 'multiplicacio'://Guardo el número actual coma a primer operand i l'operació multiplicació
+                    num1=valorPantallaActual;
+                    operacio='multiplicacio';
+                    break;
+                case 'divisio'://Guardo el número actual coma a primer operand i l'operació divisió
+                    num1=valorPantallaActual;
+                    operacio='divisio';
+                    break;
+                case 'igual'://Guardo el valor en pantalla com a segon operand, calculo l'operació i mostro el resultat
+                    num2=valorPantallaActual;
+                    result=calculadoraNova(operacio,parseInt(num1),parseInt(num2));
+                    pantallaActual.innerText=result;
+            }
+        }
+
+    </script>
+
+    <!-- Enllaç a Bootstrap4 JS-->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
