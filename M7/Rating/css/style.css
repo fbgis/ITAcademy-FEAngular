@@ -1,0 +1,45 @@
+/* Codi CSS */
+
+/* Estils del div que conté les estrelles */
+div {
+    width: 200px;
+    height: 100px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -50px 0 0 -100px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row-reverse;
+}
+
+/* Inicialment totes les estrelles tenen un color blau apagat */
+h1 {
+    display: inline-block;
+    color: powderblue;
+}
+
+/* Si el passa el ratolí per sobre l'estrella canvia a color vermell */
+h1:hover {
+    color:red;
+}
+
+/* Si es passa per sobre d'una estrella les anteriors també canvien de color */
+#estrella4:hover ~ .grup4{
+    color: red;
+}
+
+#estrella3:hover ~ .grup3{
+    color: red;
+}
+
+#estrella2:hover ~ .grup2{
+    color: red;
+}
+
+#estrella1:hover ~ .grup1{
+    color: red;
+}
+
