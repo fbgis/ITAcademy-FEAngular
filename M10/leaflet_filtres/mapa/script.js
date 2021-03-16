@@ -39,7 +39,7 @@ function onMapLoad() {
 						$('#kind_food_selector').append(`<option value="${tipusCuinaLlista[i]}">${tipusCuinaLlista[i]}</option>`); //Afegeixo l'element al select
 					}
 				}
-		
+		 
 			});
 
 			//Crido la funció per a mostrar tots els restuarants al mapa
@@ -82,14 +82,14 @@ function render_to_map(data_markers,filter){
 			});
 		}
 		marker.bindPopup(`
-			'<div class="card" style="width: 18rem;">
+			<div class="card" style="width: 18rem;">
   				<img src="img/${item.photo}" class="card-img-top">
   				<div class="card-body">
     				<h5 class="card-title">${item.name}</h5>
 					<p class="card-text"><b>Adreça: </b>${item.address}</p>
 					<p class="card-text"><b>Tipus de cuina: </b>${item.kind_food}</p>
   				</div>
-			</div>'
+			</div>
 		`);
 		markers.addLayer(marker);
 	});

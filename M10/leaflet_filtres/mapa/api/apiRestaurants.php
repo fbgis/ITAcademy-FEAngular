@@ -2,6 +2,7 @@
 /*
 Trataremos los datos deacuerdo con la especificación 
 */
+header('Access-Control-Allow-Origin: *');
 include("_db.php");
 
 $sql = "SELECT * FROM restaurants"; 
