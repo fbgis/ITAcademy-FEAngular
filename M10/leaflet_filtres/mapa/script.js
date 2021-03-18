@@ -50,7 +50,7 @@ function onMapLoad() {
 }
 
 $('#kind_food_selector').on('change', function() {
-  console.log(this.value);
+  //console.log(this.value);
   render_to_map(data_markers, this.value);
 });
 
@@ -71,27 +71,27 @@ function render_to_map(data_markers,filter){
 	$.each(data_markers, function (index, item) { 
 		//Afegeixo el marcador si els haig d'afegir tot o bé si és del tipus seleccionat
 		var marker;
-		if(filter=='all'){
-			marker = L.marker(new L.LatLng(item.lat,item.lon));
+		afegir=false;
+		$.each(item.kind_food.split(","), function (indexKind, itemKind) { 
+			if(filter==itemKind){
+			   afegir=true;
+			}
+	   	});
+		if(filter=='all'||afegir==true){
+			marker = L.marker(new L.LatLng(item.lat,item.lng));
 			
-		}else{
-			$.each(item.kind_food.split(","), function (indexKind, itemKind) { 
-				 if(filter==itemKind){
-					marker = L.marker(new L.LatLng(item.lat,item.lon));
-				 }
-			});
+			marker.bindPopup(`
+				<div class="card" style="width: 18rem;">
+					<img src="img/${item.photo}" class="card-img-top">
+					<div class="card-body">
+						<h5 class="card-title">${item.name}</h5>
+						<p class="card-text"><b>Adreça: </b>${item.address}</p>
+						<p class="card-text"><b>Tipus de cuina: </b>${item.kind_food}</p>
+					</div>
+				</div>
+			`);
+			markers.addLayer(marker);
 		}
-		marker.bindPopup(`
-			<div class="card" style="width: 18rem;">
-  				<img src="img/${item.photo}" class="card-img-top">
-  				<div class="card-body">
-    				<h5 class="card-title">${item.name}</h5>
-					<p class="card-text"><b>Adreça: </b>${item.address}</p>
-					<p class="card-text"><b>Tipus de cuina: </b>${item.kind_food}</p>
-  				</div>
-			</div>
-		`);
-		markers.addLayer(marker);
 	});
 	
 	//Afegeixo els marcadors al mapa
