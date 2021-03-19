@@ -1,0 +1,86 @@
+<head>
+   <!--Bootstrp CSS-->
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous"> 
+<script src="../models/car.js"></script>
+<script src="../models/wheel.js"></script>
+<script src="../controllers/controller.js"></script>
+</head>
+<body>
+
+    <div class="container">
+        <div class="text-center mt-2">
+            <h1>Exercici Vehicles</h1>
+        </div>
+        <form id="formCotxes" onsubmit="return afegirCotxe();">
+            <div class="row mt-3">
+                <div class="mb-3 col-md-4">
+                    <label for="inputPlate" class="form-label">Plate</label>
+                    <input type="text" class="form-control" id="inputPlate">
+                  </div>
+                  <div class="mb-3 col-md-4">
+                    <label for="inputBrand" class="form-label">Brand</label>
+                    <input type="text" class="form-control" id="inputBrand">
+                  </div>
+                  <div class="mb-3 col-md-4">
+                    <label for="inputColor" class="form-label">Color</label>
+                    <input type="text" class="form-control" id="inputColor">
+                  </div>
+            </div>
+            <div class="d-flex justify-content-center">
+                <button type="submit" class="btn btn-primary">Create Car</button>
+            </div>
+        </form>
+        <form id="formRodes" class='d-none' onsubmit="return afegirRodes();">
+            <div class="row mt-3">
+                <div class="mb-3 col-md-3">
+                    <label for="inputBrand1" class="form-label">Marca roda 1</label>
+                    <input type="text" class="form-control" id="inputBrand1">
+                  </div>
+                  <div class="mb-3 col-md-3">
+                    <label for="inputDiam1" class="form-label">Diàmetre roda 1</label>
+                    <input type="text" class="form-control" id="inputDiam1">
+                  </div>
+                  <div class="mb-3 col-md-3">
+                    <label for="inputBrand2" class="form-label">Marca roda 2</label>
+                    <input type="text" class="form-control" id="inputBrand2">
+                  </div>
+                  <div class="mb-3 col-md-3">
+                    <label for="inputDiam2" class="form-label">Diàmetre roda 2</label>
+                    <input type="text" class="form-control" id="inputDiam2">
+                  </div>
+            </div>
+            <div class="row mt-3">
+                <div class="mb-3 col-md-3">
+                    <label for="inputBrand3" class="form-label">Marca roda 3</label>
+                    <input type="text" class="form-control" id="inputBrand3">
+                  </div>
+                  <div class="mb-3 col-md-3">
+                    <label for="inputDiam3" class="form-label">Diàmetre roda 3</label>
+                    <input type="text" class="form-control" id="inputDiam3">
+                  </div>
+                  <div class="mb-3 col-md-3">
+                    <label for="inputBrand4" class="form-label">Marca roda 4</label>
+                    <input type="text" class="form-control" id="inputBrand4">
+                  </div>
+                  <div class="mb-3 col-md-3">
+                    <label for="inputDiam4" class="form-label">Diàmetre roda 4</label>
+                    <input type="text" class="form-control" id="inputDiam4">
+                  </div>
+            </div>
+            <div class="d-flex justify-content-center">
+                <button type="submit" class="btn btn-primary">Add Wheels</button>
+            </div>
+
+        </form>
+
+        <p>Car:</p>
+        <div class="alert alert-primary center" id="resultat"></div>
+        <p>Wheels:</p>
+        <div class="d-flex mb-4">
+            <div class="col alert alert-primary center m-1 rodes" id="resultatRodes1"></div>
+            <div class="col alert alert-primary center m-1 rodes" id="resultatRodes2"></div>
+            <div class="col alert alert-primary center m-1 rodes" id="resultatRodes3"></div>
+            <div class="col alert alert-primary center m-1 rodes" id="resultatRodes4"></div>
+        </div>
+    </div>
+</body>
