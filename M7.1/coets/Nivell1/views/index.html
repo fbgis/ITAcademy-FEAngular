@@ -1,0 +1,32 @@
+<head>
+    <!--Bootstrp CSS-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <!--Javascript-->
+    <script src="../models/rocket.js"></script>
+    <script src="../controllers/controller.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Rockets!</h1>
+        <div>
+            <button onclick="createRocket('32WESSDS',[10,30,80])">Create Rocket1</button>
+            <button onclick="createRocket('LDSFJA32',[30,40,50,50,30,10])">Create Rocket2</button>
+        </div>
+        </br>
+        <div>
+            <button onclick="speedUp('32WESSDS')">Accelerate rocket 1</button>
+            <button onclick="speedUp('LDSFJA32')">Accelerate rocket 2</button>
+            <button onclick="braking('32WESSDS')">Break rocket 1</button>
+            <button onclick="braking('LDSFJA32')">Break rocket 2</button>
+        </div>
+        </br>
+        <div>
+            <button onclick="printInfo('32WESSDS')">Print rocket 1 info</button>
+            <button onclick="printInfo('LDSFJA32')">Print rocket 2 info</button>
+            <button onclick="printAll()">Print all rockets</button>
+        </div>
+    </div>
+    <br>
+    <ul id='rocketInfo'></ul>
+    
+</body>

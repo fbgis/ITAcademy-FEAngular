@@ -1,0 +1,20 @@
+.verticaltext{
+    width:1px;
+    word-wrap: break-word;
+    white-space:pre-wrap; 
+}
+
+#btnsRocket1, #btnsRocket2,
+#rocket1, #rocket2{
+    display:none;
+}
+
+.rocket.horizTranslate {
+    -webkit-transition: 10s;
+    -moz-transition: 10s;
+    -ms-transition: 10s;
+    -o-transition: 10s;
+    transition:10s;
+    transition-timing-function: linear;
+    margin-left: 95% !important;
+  }
