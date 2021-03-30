@@ -1,6 +1,10 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <!--Bootstrp CSS-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <!--CSS-->
+    <link rel="stylesheet" href="/css/style.css">
     <!--Icones-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <!--Javascript-->
@@ -13,63 +17,57 @@
             <h1 class="text-center">Rockets!</h1>
             <button class="btn btn-primary fas fa-info" data-toggle="tooltip" title="All rockets info" onclick="printAll()"></button>
         </div>
-        <div class="row text-center">
-            <div class="col bg-light">
+        <div class="row mb-4">
+            <div class="col-3 bg-light text-center">
                 <h3>Roquet 1</h3>
                 <div class="m-2">
-                    <button class="btn btn-secondary fas fa-rocket " onclick="createRocket('32WESSDS',[10,30,80])"> Create rocket</button>
+                    <button class="btn btn-warning fas fa-rocket " onclick="createRocket('32WESSDS',[10,30,80],'1')"> Create rocket</button>
                 </div>
-                <div>
-                    <button class="btn btn-success fas fa-fast-forward" data-toggle="tooltip" title="Speed up" onclick="speedUp('32WESSDS')"></button>
+                <div id="btnsRocket1">
+                    <button class="btn btn-success fas fa-fast-forward" data-toggle="tooltip" title="Speed up" onclick="speedUp('32WESSDS','1')"></button>
                     <button class="btn btn-danger fas fa-hand-paper" data-toggle="tooltip" title="Barcking" onclick="braking('32WESSDS')"></button>
                     <button class="btn btn-primary fas fa-info" data-toggle="tooltip" title="Rocket information" onclick="printInfo('32WESSDS')"></button>
                 </div>
                 <p id="rocket1Info"></p>
             </div>
-            
-            <div class="col bg-warning">
+            <div class="col-1 bg-success d-flex align-items-center justify-content-center">
+                <p class="text-white verticaltext">Earth</p>
+            </div>
+            <div class="col-7 bg-dark d-flex align-items-center" id="spaceRocket1">
+                <h3 class="text-white fas fa-space-shuttle rocket" id="rocket1"></h3>
+            </div>
+            <div class="col-1 bg-secondary d-flex align-items-center justify-content-center">
+                <p class="text-white verticaltext">Moon</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-3 bg-light text-center">
                 <h3>Roquet 2</h3>
                 <div class="m-2">
-                    <button class="btn btn-secondary fas fa-rocket" onclick="createRocket('LDSFJA32',[30,40,50,50,30,10])"> Create rocket</button>
+                    <button class="btn btn-warning fas fa-rocket" onclick="createRocket('LDSFJA32',[30,40,50,50,30,10],'2')"> Create rocket</button>
                 </div>
-                <div>
-                    <button class="btn btn-success fas fa-fast-forward" data-toggle="tooltip" title="Speed up" onclick="speedUp('LDSFJA32')"></button>
+                <div id="btnsRocket2">
+                    <button class="btn btn-success fas fa-fast-forward" data-toggle="tooltip" title="Speed up" onclick="speedUp('LDSFJA32','2')"></button>
                     <button class="btn btn-danger fas fa-hand-paper" data-toggle="tooltip" title="Barcking" onclick="braking('LDSFJA32')"></button>
                     <button class="btn btn-primary fas fa-info" data-toggle="tooltip" title="Rocket information" onclick="printInfo('LDSFJA32')"></button>
                 </div>
                 <p id="rocket2Info"></p>
             </div>
-            
+            <div class="col-1 bg-success d-flex align-items-center justify-content-center">
+                <p class="text-white verticaltext">Earth</p>
+            </div>
+            <div class="col-7 bg-dark d-flex align-items-center" id="spaceRocket1">
+                <h3 class="text-white fas fa-space-shuttle rocket" id="rocket2"></h3>
+            </div>
+            <div class="col-1 bg-secondary d-flex align-items-center justify-content-center">
+                <p class="text-white verticaltext">Moon</p>
+            </div>
         </div>
         <div class="row mt-2 mb-4 bg-light">
             <div class="col-sm-4 mx-auto text-center">
                 <ul id='rocketInfo'></ul>
             </div>
-        </div>
-        <div class="row text-center">
-            <div class="col bg-light d-flex align-items-center">
-                <div class="bg-dark d-flex align-items-center">
-                    <p class="text-white ">Moon</p>
-                </div>
-                <div id="spaceRocket1" style="height:400px;" class="align-items-end">
-                    <div class="col bg-primary align-self-end">hola</div>
-                </div>
-                <div class="bg-secondary">
-                    <p class="text-white ">Earth</p>
-                </div>
-            </div>
-            <div class="col bg-warning">
-                <div class="bg-dark">
-                    <p class="text-white ">Moon</p>
-                </div>
-                <div id="spaceRocket2" style="height:400px;">
-                    <p>hola</p>
-                </div>
-                <div class="bg-secondary">
-                    <p class="text-white ">Earth</p>
-                </div>
-            </div>
-        </div>
+        </div> 
     </div>
 
     
